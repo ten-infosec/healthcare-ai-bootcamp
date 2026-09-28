@@ -1,0 +1,13 @@
+# 가상환경 · 캐시
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# 데이터 · 모델 (부트캠프 제공 데이터, 용량 큰 파일)
+data/
+*.xlsx
+*.csv
+*.h5
+
+# 내보낸 파일
+*.html
