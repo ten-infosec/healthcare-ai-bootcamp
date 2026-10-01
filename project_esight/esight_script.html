@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E-Sight 최종발표 전체 대본</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#F3F6F9; --ink:#1B2733; --muted:#5B6B7A; --line:#D9E1E8;
+  --eunji:#1F7A6D; --eunji-soft:#E3F2EF;
+  --taeeun:#2B5CA8; --taeeun-soft:#E4ECF8;
+  --flag:#9A5B00; --flag-soft:#FFF3DF;
+  --draft:#6B4FA0; --draft-soft:#EFEAF7;
+  --script-size:19px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#131A21; --surface:#1B242D; --ink:#E6EDF3; --muted:#9AAAB8; --line:#2C3843;
+    --eunji:#5FC4B3; --eunji-soft:#18302C; --taeeun:#8DB3F0; --taeeun-soft:#1A2940;
+    --flag:#F0B659; --flag-soft:#33280F; --draft:#B9A2E6; --draft-soft:#2A2238;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131A21; --surface:#1B242D; --ink:#E6EDF3; --muted:#9AAAB8; --line:#2C3843;
+  --eunji:#5FC4B3; --eunji-soft:#18302C; --taeeun:#8DB3F0; --taeeun-soft:#1A2940;
+  --flag:#F0B659; --flag-soft:#33280F; --draft:#B9A2E6; --draft-soft:#2A2238;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:15px;line-height:1.55}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--taeeun);outline-offset:2px;border-radius:4px}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);
+  border-bottom:1px solid var(--line)}
+.bar-in{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bar h1{font-size:16px;margin:0;font-weight:700;margin-right:auto;white-space:nowrap}
+.seg{display:inline-flex;background:var(--surface);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;padding:6px 14px;border-radius:999px;cursor:pointer;font-size:14px;font-weight:500;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--bg);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.sizes{display:inline-flex;gap:4px}
+.sizes button{border:1px solid var(--line);background:var(--bg);min-width:40px;height:32px;padding:0 8px;white-space:nowrap;border-radius:8px;cursor:pointer;font-weight:600}
+
+/* layout */
+.wrap{max-width:1180px;margin:0 auto;padding:24px 20px 80px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:40px}
+nav.idx{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);align-self:start;max-height:calc(100vh - 100px);overflow:auto;font-size:13px}
+nav.idx a{display:flex;gap:8px;padding:5px 8px;border-radius:6px;color:var(--muted);text-decoration:none;line-height:1.35}
+nav.idx a:hover{background:var(--surface);color:var(--ink)}
+nav.idx a .n{min-width:22px;font-weight:600}
+nav.idx a.e .n{color:var(--eunji)} nav.idx a.t .n{color:var(--taeeun)}
+nav.idx .part{margin:14px 8px 4px;font-weight:700;color:var(--ink);font-size:13px}
+nav.idx .part:first-child{margin-top:0}
+main{min-width:0}
+
+/* intro */
+.intro{margin-bottom:36px}
+.intro .lead{font-size:15px;color:var(--muted);margin:0 0 18px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.who{border-radius:12px;padding:16px 18px}
+.who.e{background:var(--eunji-soft)} .who.t{background:var(--taeeun-soft)}
+.who b{display:block;font-size:17px;margin-bottom:2px}
+.who.e b{color:var(--eunji)} .who.t b{color:var(--taeeun)}
+.who span{color:var(--muted);font-size:14px}
+.checks{border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.checks h2{font-size:15px;margin:0 0 10px}
+.checks ol{margin:0;padding-left:20px}
+.checks li{margin:6px 0}
+.checks li small{color:var(--muted)}
+
+/* slides */
+.slide{padding:26px 0 30px;border-top:1px solid var(--line);scroll-margin-top:80px}
+.slide.hide{display:none}
+.head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.num{font-size:28px;font-weight:700;line-height:1;min-width:44px}
+.slide.e .num{color:var(--eunji)} .slide.t .num{color:var(--taeeun)}
+.title{font-size:17px;font-weight:600;flex:1 1 280px}
+.meta{display:flex;gap:6px;align-items:center;font-size:12.5px}
+.tag{padding:2px 9px;border-radius:999px;font-weight:600}
+.tag.e{background:var(--eunji-soft);color:var(--eunji)} .tag.t{background:var(--taeeun-soft);color:var(--taeeun)}
+.tag.d{background:var(--draft-soft);color:var(--draft)}
+.tag.n{background:var(--flag-soft);color:var(--flag)}
+.tag.q{background:var(--surface);color:var(--muted)}
+.sec{color:var(--muted)}
+.script{font-family:"Gowun Batang",Georgia,serif;font-size:var(--script-size);line-height:1.9;max-width:70ch}
+.script p{margin:0 0 .75em}
+.script p:last-child{margin-bottom:0}
+.empty{color:var(--muted);font-style:italic;font-size:15px}
+.flag{margin-top:14px;background:var(--flag-soft);border-radius:10px;padding:12px 16px;font-size:14px;max-width:70ch}
+.flag strong{color:var(--flag)}
+.flag ul{margin:6px 0 0;padding-left:18px}
+.moved{font-size:13px;color:var(--taeeun);font-weight:600;margin-bottom:6px}
+
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  nav.idx{display:none}
+  .split{grid-template-columns:1fr}
+  .bar h1{width:100%;margin-right:0}
+}
+@media print{
+  .bar,nav.idx{display:none}
+  .wrap{display:block}
+  .slide{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <h1>E-Sight 최종발표 대본</h1>
+    <div class="seg" role="group" aria-label="보기 선택">
+      <button type="button" data-view="all" aria-pressed="true">전체</button>
+      <button type="button" data-view="e" aria-pressed="false">전은지</button>
+      <button type="button" data-view="t" aria-pressed="false">엄태은</button>
+    </div>
+    <div class="sizes" role="group" aria-label="대본 글자 크기">
+      <button type="button" id="smaller" aria-label="글자 작게">가−</button>
+      <button type="button" id="bigger" aria-label="글자 크게">가+</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="idx" id="idx" aria-label="슬라이드 목록"></nav>
+  <main>
+    <section class="intro">
+      <p class="lead">기준 파일은 팀장님 최종본 TeamMission6.pptx(34장, 10월 1일)입니다. 발표 시간에 맞춰 슬라이드 노트의 대본을 짧게 줄였고, 슬라이드에 나온 숫자를 중심으로, 말하기 편한 길이로 다듬었습니다. 부록 32~34번은 발표 때 넘기지 않고 질문이 나오면 씁니다.</p>
+      <div class="split">
+        <div class="who e"><b>1부 전은지</b><span>슬라이드 1~17 · 약 <em id="te"></em>분</span></div>
+        <div class="who t"><b>2부 엄태은</b><span>슬라이드 18~31 · 약 <em id="tt"></em>분</span></div>
+      </div>
+      <div class="checks">
+        <h2>알아둘 점</h2>
+        <ol>
+          <li>예상 시간은 1분에 330자(공백 제외) 기준이라 실제로는 조금 더 걸립니다.</li>
+          <li>슬라이드 내용은 바꾸지 않았고, 슬라이드에 적힌 숫자만 읽도록 대본을 맞췄습니다.</li>
+          <li>32~34번 부록은 예상 질문(Q)과 답변으로 정리했습니다.</li>
+        </ol>
+      </div>
+    </section>
+    <div id="slides"></div>
+  </main>
+</div>
+
+<script>
+const S = [{"n": 1, "p": "e", "t": "표지 · 5팀 이사이트", "s": ["안녕하세요, 5팀 이사이트입니다.", "저희 과제명은 \"멀티모달 에이아이를 활용한 동물병원 판독 자동화 및 보호자 맞춤 설명문 제공 서비스\"입니다.", "앞부분은 제가 프로젝트 개요와 수행 절차를, 뒷부분은 엄태은 님이 분석 결과와 개선안을 발표하겠습니다."]}, {"n": 2, "p": "e", "t": "섹션 · 프로젝트 개요", "s": ["먼저 프로젝트 개요를 발표하겠습니다."]}, {"n": 3, "p": "e", "t": "시장조사 · 고객은 동물병원", "s": ["먼저 저희가 직접 공략할 수 있는 시장의 크기부터 확인했습니다. 저희 서비스는 동물병원에 판매하는 구독형 판독 보조 서비스, 즉 병원 대상 기업 간 서비스라서 고객 수가 곧 동물병원 수입니다.", "행정안전부 인허가 데이터를 보면 전국 1만 635건 중 현재 영업 중인 병원은 5,482곳입니다. 자사 거래처 610곳은 그중 11%로, 아직 성장 여지가 큽니다."]}, {"n": 4, "p": "e", "t": "시장조사 · 수도권 45.1%, 꾸준한 신규 개업", "s": ["왼쪽 그래프에서 진한 색이 수도권입니다. 경기가 1,409곳, 서울이 982곳으로 압도적으로 많고, 수도권 전체가 45.1%입니다.", "오른쪽은 분기별 신규 인허가 건수인데, 분기마다 52곳에서 86곳, 1년이면 약 280곳이 꾸준히 새로 문을 엽니다.", "그래서 파일럿과 영업은 수도권부터 시작하고, 새로 여는 병원을 새 고객 후보로 보고 있습니다."]}, {"n": 5, "p": "e", "t": "추진배경 ① 시장 · 경쟁의 기준이 바뀌었다", "s": ["헬스케어 인공지능 시장은 2026년 536억 달러에서 2031년 2,514억 달러로, 연평균 36% 넘게 성장할 전망입니다. 그런데 성장의 모양이 갈라지고 있습니다.", "영상 한 장을 판독하고 건당 돈을 받는 인공지능은 한계에 부딪혔고, 병원 업무 흐름 안에 들어간 서비스가 크게 성장했습니다. 미국에서는 진료 대화를 자동으로 기록해 주는 기업이 기업가치 53억 달러를 넘겼습니다.", "즉 경쟁의 기준이 \"영상을 얼마나 잘 읽는가\"에서 \"기록·검사·처방까지 묶어 병원 업무 안에 얼마나 오래 남는가\"로 바뀌고 있습니다."]}, {"n": 6, "p": "e", "t": "고객 니즈 · 설명과 정보의 부재", "s": ["그렇다면 보호자는 무엇에 불만일까요. 한국소비자연맹이 동물병원 이용자 1,000명에게 불만족 이유를 물었습니다.", "단일 1위는 과잉진료 의심 16.7%지만, 진료비 사전 고지 없음, 진료 항목 정보 없음, 의료진 설명 부족을 합치면 33.5%로 1위의 두 배입니다. 과잉진료나 오진 의심까지 넓게 보면 약 60%가 설명 부족과 이어집니다.", "보호자는 진단을 불신하는 것이 아니라, 설명의 부재를 불신합니다."]}, {"n": 7, "p": "e", "t": "추진배경 ② 자사 현황", "s": ["그렇다면 저희 회사 오즈헬스는 어떤 상황일까요. 매출은 올해 상반기 전년 대비 3.1% 줄었고, 계약 갱신율은 94%에서 81%로 3년 연속 떨어지고 있습니다.", "원인은 두 가지입니다. 첫째, 매출의 74%가 건당 과금이라 병원이 검사를 줄이면 매출도 그대로 줄어듭니다. 둘째, 10년간 쌓은 영상·검사·처방 데이터가 사업부별로 따로 떨어져 있습니다.", "한 문장으로 정리하면, 저희는 \"멀티모달 데이터는 있지만, 멀티모달 서비스는 없는 회사\"입니다."]}, {"n": 8, "p": "e", "t": "개선 기회와 목표", "s": ["그래서 흩어진 데이터를 잇기로 했습니다. 엑스레이 영상에 검사수치와 투약 이력을 한 동물 기준으로 결합해, 수의사에게는 판독 초안을, 보호자에게는 이해하기 쉬운 설명문을 제공합니다.", "핵심은 건당 판독이 아니라 병원이 매일 쓰는 구독형 도구로 만드는 것입니다.", "목표 지표는 계약 갱신율 81%에서 95%로, 구독 매출 비중 5%에서 20%로, 그리고 수의사 판독 시간 30% 단축입니다."]}, {"n": 9, "p": "e", "t": "섹션 · 팀 구성 및 역할", "s": ["다음은 팀 구성과 역할입니다."]}, {"n": 10, "p": "e", "t": "팀원 구성 및 역할", "s": ["저희 팀은 네 명입니다. 김지영 팀장이 총괄과 데이터 결합 구조 시연을, 제가 특성요인도·변수정의서·분석계획서 설계를, 신혜원 님이 시장·보호자 불만·수의사법 조사를, 엄태은 님이 엑스레이 데이터 정제와 통계 분석을 맡았습니다."]}, {"n": 11, "p": "e", "t": "섹션 · 프로젝트 수행 절차", "s": ["이제 프로젝트 수행 절차를 말씀드리겠습니다."]}, {"n": 12, "p": "e", "t": "프로젝트 수행 일정", "s": ["프로젝트는 9월 16일부터 오늘까지 이 일정으로 진행했습니다.", "기획 단계에서 넓게 세운 계획이 실데이터를 만나면서 어떻게 바뀌었는지, 순서대로 말씀드리겠습니다."]}, {"n": 13, "p": "e", "t": "특성요인도", "s": ["먼저 서비스에 영향을 주는 요인을 특성요인도, 흔히 어골도라고 부르는 그림으로 정리했습니다.", "위쪽은 영상·혈액·처방 같은 데이터 영역, 아래쪽은 인공지능·판독 초안·설명문·시장·법제 같은 서비스 영역으로, 11개 영역에서 528개 인자를 뽑았습니다."]}, {"n": 14, "p": "e", "t": "데이터 수집성 평가표", "s": ["528개 인자는 중요도와 수집 가능성을 1·3·9점으로 평가했습니다. 9점 척도를 쓴 건 '꼭 필요한 것'과 '있으면 좋은 것'의 차이를 확실히 벌리기 위해서입니다.", "그 결과 104개를 즉시 착수 대상으로 골랐고, 판독문·응급 기록·보호자 동의 같은 선결 과제 84개는 일정을 좌우하는 리스크로 봤습니다."]}, {"n": 15, "p": "e", "t": "실데이터 확인 후 재설계 · 104개 → 19개", "s": ["그런데 실제 데이터, 반려동물 근골격계 엑스레이 라벨 1만 6,618건을 받아 보니, 104개 중 바로 쓸 수 있는 변수는 12개뿐이었고 품종·체중·혈액·투약 기록은 없었습니다.", "그래서 목표 변수, 층별화 변수, 결합키 등 19개 변수로 다시 설계했고, 없는 혈액과 투약 데이터는 가상으로 만들어 결합 구조가 작동하는지 검증하는 데만 썼습니다.", "528개 인자 설계는 서비스가 확장될 때의 로드맵으로 유지합니다."]}, {"n": 16, "p": "e", "t": "변수정의서 · 19개 변수", "s": ["재설계 후의 분석용 변수정의서입니다. 실제 변수 9개, 파생 변수 6개, 가상 변수 4개로 총 19개입니다.", "영상 파일명과 추정 개체 번호를 결합키로 써서, 가상 데이터와 연결 실패 없이 붙는 것을 확인했습니다."]}, {"n": 17, "p": "e", "t": "분석 계획서", "s": ["분석은 네 단계로 계획했습니다. 데이터 통합과 품질 점검, 층별로 나눠 보는 탐색적 분석, 그룹 간 차이 검정, 그리고 결과를 서비스로 연결하는 판독 보조 모델 단계입니다.", "실제 분석 결과는 엄태은 님이 이어서 발표하겠습니다."]}, {"n": 18, "p": "t", "t": "섹션 · 프로젝트 수행 결과", "s": ["이어서 분석 결과를 말씀드리겠습니다. 엄태은입니다."]}, {"n": 19, "p": "t", "t": "계획 대비 수행 결과", "s": ["먼저 앞의 분석 계획을 실제로 어디까지 수행했는지 정리하겠습니다.", "탐색적 분석과 그룹 간 차이 검정은 실데이터로 수행했고, 특히 검정은 크래머 브이와 교란 점검, 병원별 보정 비교까지 더해 계획보다 깊게 진행했습니다.", "데이터 통합은 실데이터를 정제하고, 혈액·처방은 가상 데이터로 구조만 검증했습니다. 판독 보조 모델은 같은 개체의 실데이터가 없어 향후 과제로 남겼습니다."]}, {"n": 20, "p": "t", "t": "분석 데이터 개요", "s": ["분석 데이터는 반려동물 근골격계 엑스레이 라벨 1만 6,618장입니다. 강아지 1만 5,014장, 고양이 1,604장이고, 21개 병원에서 2004년부터 2021년까지 촬영됐습니다.", "이 중 이상소견은 1,750장, 약 10.5%입니다. 이상소견 여부를 목표 변수로 두고, 어떤 요인이 관련 있는지 살펴봤습니다."]}, {"n": 21, "p": "t", "t": "결과 1 · 질환군별 이상률 최대 150배", "s": ["첫 번째 결과입니다. 영상에는 어떤 질환을 의심해서 찍었는지를 뜻하는 7개 질환군 코드가 있습니다.", "슬개골탈구는 이상률 47.2%로 두 장 중 한 장꼴이지만, 골격계 종양은 0.3%로 약 150배 차이가 납니다. 또 전체 이상소견의 67%가 슬개골탈구 하나에 몰려 있습니다.", "그래서 이상 가능성이 높은 영상을 먼저 보여주는 선별 기능과, 드물어서 놓치기 쉬운 종양을 걸러주는 안전망이 필요합니다."]}, {"n": 22, "p": "t", "t": "결과 2 · 기본 정보로는 구분 불가", "s": ["두 번째 결과입니다. 데이터가 많아 카이제곱 검정은 모두 유의하게 나와서, 관련 강도를 0에서 1로 보여주는 크래머 브이로 판단했습니다.", "질환군은 0.51로 강했지만, 나이·성별·중성화는 0.1 미만으로 매우 약했습니다.", "즉 동물의 기본 정보만으로는 이상 여부를 가려낼 수 없고, 이것이 영상·검사·투약을 함께 보는 멀티모달이 필요한 데이터 근거입니다."]}, {"n": 23, "p": "t", "t": "결과 3 · 병원 간 판정 편차 최대 3.8배", "s": ["세 번째는 병원 간 차이입니다. 병원마다 찍는 질환이 다를 수 있어서, 질환군과 축종 구성을 감안한 기대 이상률 대비 실제 이상률이 몇 배인지를 비교했습니다.", "그 결과 1,000장 이상 찍은 대형 병원끼리도 최대 3.8배 차이가 났습니다.", "이건 오진이 아니라 병원마다 다른 판정 기준으로 해석했고, 병원 간 공통 기준선이 되는 판독 보조가 필요하다는 근거가 됩니다."]}, {"n": 24, "p": "t", "t": "분석 신뢰도 점검", "s": ["결과를 믿기 전에 두 가지를 점검했습니다.", "촬영 자세도 관련이 커 보였지만, 슬개골은 에이피, 즉 앞뒤 방향, 척추는 래터럴, 즉 옆 방향처럼 질환군마다 자세가 거의 정해져 있어서 교란으로 보고 제외했습니다.", "또 고양이 이상소견은 26건뿐이라 따로 분석하기 어려웠습니다. 공개 데이터로는 채울 수 없는 공백이라, 자사 610개소의 고양이 데이터 확보 자체가 경쟁력이 됩니다."]}, {"n": 25, "p": "t", "t": "① 데이터 결합 구조 시연", "s": ["실데이터에는 혈액과 처방이 없어서, 같은 형식의 가상 데이터로 결합 구조를 검증했습니다.", "한 마리를 따라가 보면, 개체 번호로 2020년 3월의 슬개골 엑스레이가 이어지고, 그 영상 번호로 같은 날의 혈액검사 6개 항목과 처방 두 건이 붙습니다. 한 마리에 영상 여러 장이 붙는 1대 다 구조입니다."]}, {"n": 26, "p": "t", "t": "② 코드 표준화", "s": ["실제로 병원 데이터를 합치려면, 같은 백혈구 검사도 병원마다 영어 대문자, 소문자, 한글로 다르게 적혀 있어서, 이 표기를 표준 코드로 통일하고, 단위와 결측, 입력 오류를 먼저 처리해야 합니다.", "이 과정을 가상 데이터로 시연했고, 여기서 나온 수치는 결론에 쓰지 않았습니다."]}, {"n": 27, "p": "t", "t": "인사이트 · 선별, 멀티모달, 표준화", "s": ["정리하면, 이상소견이 몰려 있고 드문 고위험이 있어 선별 기능이, 기본 정보로는 구분이 안 돼 멀티모달이, 병원 간 편차가 커서 판독 표준화가 필요합니다."]}, {"n": 28, "p": "t", "t": "개선안 · 3단계 구독 전환", "s": ["그래서 세 단계를 제안합니다.", "1단계는 이상소견의 67%가 몰린 슬개골탈구 선별 파일럿으로, 판독 대기열을 우선순위로 정렬하고 종양 같은 고위험은 알림을 띄웁니다.", "2단계는 병원별 판정 리포트 구독으로, 계속 쓰게 되는 서비스라 갱신율을 올리는 장치가 됩니다.", "3단계는 멀티모달 판독 초안과 보호자 설명문입니다. 수의사법상 진단의 주체는 수의사이므로, 인공지능은 확정 진단을 내리지 않고 반드시 수의사 승인을 거칩니다.", "이를 통해 갱신율 95%, 구독 매출 20%, 판독 시간 30% 단축 목표로 연결합니다."]}, {"n": 29, "p": "t", "t": "섹션 · 자체 평가 의견", "s": ["마지막으로 자체 평가입니다."]}, {"n": 30, "p": "t", "t": "프로젝트 피드백", "s": ["잘한 점은 넓게 세운 계획을 실데이터에 맞춰 빠르게 조정하고, 교란 점검과 보정 비교로 결과를 한 번 더 검증한 것입니다.", "아쉬운 점은 같은 동물의 영상·검사·투약 실데이터를 확보하지 못해 결합 효과를 실데이터로 증명하지 못한 것입니다.", "앞으로 협력 병원 데이터로 결합 효과를 검증하고, 흉부·복부 영상으로도 확장하겠습니다."]}, {"n": 31, "p": "t", "t": "감사합니다", "s": ["이상으로 이사이트의 발표를 마치겠습니다. 감사합니다."]}, {"n": 32, "p": "e", "q": 1, "t": "부록 · 수익 시나리오", "s": ["질문. 시장 규모가 금액으로 얼마인가요?", "병원 수 × 월 요금 × 12개월로 계산했습니다. 요금은 보호자 설명문 월 20만 원, 인공지능 판독 보조 구독 월 80만 원으로 가정했습니다.", "전체 5,482곳 기준 연 약 132억~526억 원, 초기 타깃인 업력 10년 이상 3,097곳 기준 연 약 74억~297억 원입니다. 모든 병원이 가입한다고 본 상한이라, 실제 규모는 도입률에 따라 달라집니다."]}, {"n": 33, "p": "e", "q": 1, "t": "부록 · 규제와 시장 확보 전략", "s": ["질문. 인공지능이 판독하면 수의사가 필요 없나요? 규제 문제는요?", "수의사법 제10조상 진료 주체는 수의사라, 이사이트는 처음부터 수의사가 승인하는 병원 전용 보조 도구로 설계했습니다.", "오히려 제13조의2, 제19조, 제20조의 설명·진료비 고지 의무 부담을 줄여주는 도구로 시장에 들어갑니다."]}, {"n": 34, "p": "t", "q": 1, "t": "부록 · 가상 데이터 생성 방법", "s": ["질문. 가상 데이터는 어떻게 만들었고 믿을 수 있나요?", "실데이터의 성별·병원·촬영 방향·이상 비율 분포에 맞춰 개체 2,000마리를 만들고, 영상 7,519건, 혈액 4만 2,350건, 처방 1,443건을 붙였습니다.", "표기·단위 혼재와 결측, 입력 오류를 일부러 넣어 처리했고, 연결 실패는 0건입니다. 가상 수치는 결론에 쓰지 않고 구조 검증에만 사용했습니다."]}];
+
+const who = {e:'전은지', t:'엄태은'};
+const secs = s => s.s.join('').replace(/\s/g,'').length;
+const mins = p => (S.filter(x=>x.p===p && !x.q).reduce((a,x)=>a+secs(x),0)/330).toFixed(1);
+document.getElementById('te').textContent = mins('e');
+document.getElementById('tt').textContent = mins('t');
+
+const esc = t => t.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const box = document.getElementById('slides');
+const idx = document.getElementById('idx');
+let idxHtml = '<div class="part">1부 전은지</div>';
+S.forEach((x,i) => {
+  if (x.n === 18) idxHtml += '<div class="part">2부 엄태은</div>';
+  if (x.n === 32) idxHtml += '<div class="part">부록 · 질문 대비</div>';
+  idxHtml += `<a class="${x.p}" href="#s${x.n}"><span class="n">${x.n}</span><span>${esc(x.t)}</span></a>`;
+  const sec = Math.round(secs(x)/5.5);
+  const el = document.createElement('article');
+  el.className = 'slide ' + x.p;
+  el.id = 's' + x.n;
+  el.dataset.p = x.p;
+  el.innerHTML = `
+    ${x.mv ? `<div class="moved">${esc(x.mv)}</div>` : ''}
+    <div class="head">
+      <span class="num">${x.n}</span>
+      <span class="title">${esc(x.t)}</span>
+      <span class="meta">
+        <span class="tag ${x.p}">${who[x.p]}</span>
+        ${x.d ? '<span class="tag d">초안</span>' : ''}
+        ${x.nw ? '<span class="tag n">새 슬라이드</span>' : ''}
+        ${x.q ? '<span class="tag q">질문 대비</span>' : `<span class="sec">약 ${sec}초</span>`}
+      </span>
+    </div>
+    <div class="script">${x.s.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+    ${x.f ? `<div class="flag"><strong>확인</strong><ul>${x.f.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>` : ''}`;
+  box.appendChild(el);
+});
+idx.innerHTML = idxHtml;
+
+/* view filter + font size, remembered per viewer */
+const store = {
+  get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+  set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+};
+function setView(v){
+  document.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.view === v));
+  document.querySelectorAll('.slide').forEach(s => s.classList.toggle('hide', v !== 'all' && s.dataset.p !== v));
+  document.querySelectorAll('nav.idx a').forEach(a => a.style.display = (v === 'all' || a.classList.contains(v)) ? '' : 'none');
+  document.querySelectorAll('nav.idx .part').forEach((p,i) => p.style.display = (v === 'all' || (v === 'e' && i === 0) || (v === 't' && i === 1) || i === 2) ? '' : 'none');
+  store.set('esight1001-view', v);
+}
+document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+let size = parseInt(store.get('esight1001-size') || '19', 10);
+function setSize(n){
+  size = Math.min(28, Math.max(15, n));
+  document.documentElement.style.setProperty('--script-size', size + 'px');
+  store.set('esight1001-size', String(size));
+}
+document.getElementById('smaller').addEventListener('click', () => setSize(size - 1));
+document.getElementById('bigger').addEventListener('click', () => setSize(size + 1));
+setSize(size);
+setView(store.get('esight1001-view') || 'all');
+</script>
+</body>
+</html>
