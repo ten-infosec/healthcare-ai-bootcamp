@@ -11,3 +11,5 @@ data/
 
 # 내보낸 파일
 *.html
+# allow assignment HTML files
+!oz_assignment/**/*.html
