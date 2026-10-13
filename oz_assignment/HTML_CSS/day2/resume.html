@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- lang: language of this document -->
+<html lang="en">
+<head>
+    <!-- character encoding: prevents broken characters -->
+    <meta charset="UTF-8">
+    <!-- fit the page to the device width (needed for responsive design) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title shown on the browser tab -->
+    <title>Taeeun Eom | Resume</title>
+
+    <!-- ===== External libraries ===== -->
+    <!-- Font Awesome: icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Google Fonts: Roboto (English font) -->
+    <!-- preconnect: connect to the font server early so the font loads faster -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- ===== My Style ===== -->
+    <!-- load my CSS last so it can override other styles -->
+    <link rel="stylesheet" href="./resume_style.css">
+</head>
+<body>
+
+    <!-- ===== Sidebar ===== -->
+    <!-- nav: navigation area (menu links) -->
+    <nav class="sidebar">
+        <!-- inner box: used later to add space with CSS -->
+        <div class="sidebar-container">
+            <!-- ul: unordered list (list without numbers) -->
+            <ul class="sidebar-menu">
+                <!-- href="#resume": jump to the element with id="resume" on this page -->
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#about">About Me</a></li>
+                <!-- target="_blank": open the link in a new tab -->
+                <li><a href="https://github.com/ten-infosec" target="_blank">My_Github</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== Resume body ===== -->
+    <!-- id="resume": target of the "Resume" link in the sidebar -->
+    <div id="resume" class="container">
+        <main>
+
+            <!-- ===== Header ===== -->
+            <section id="resume-header">
+                <!-- wrapper: puts text (left) and photo (right) side by side -->
+                <div class="header-content">
+
+                    <!-- left side: name and contact info -->
+                    <div class="header-text">
+                        <h1>Taeeun Eom</h1>
+                        <p class="subtitle">Aspiring Healthcare AI Backend Developer</p>
+
+                        <!-- span: inline element, sits on the same line -->
+                        <!-- i: Font Awesome icon / &nbsp;: one non-breaking space -->
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>&nbsp;Seoul, South Korea
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-at"></i>&nbsp;ten.infosec@gmail.com
+                        </span>
+                        <span>
+                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/ten-infosec" target="_blank">ten-infosec</a>
+                        </span>
+                    </div>
+
+                    <!-- right side: profile photo -->
+                    <div class="profile-photo">
+                        <!-- alt: text shown if the image cannot be loaded -->
+                        <img src="./lion_profile.jpg" alt="Profile image (white lion cub)">
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===== Introduce ===== -->
+            <section id="introduce">
+                <!-- h2: section title (one level below h1) -->
+                <h2>Introduce</h2>
+                <p>
+                    Hello, I'm Taeeun Eom, an aspiring developer who wants to turn healthcare data
+                    into services that truly help people.
+                    At OZ Coding School's Healthcare AI Bootcamp, I am learning data analysis,
+                    machine learning, deep learning, and web development step by step,
+                    and I record what I learn on GitHub every day.
+                </p>
+                <!-- class="motto": styled separately -->
+                <p class="motto">"Just one step further today than I was yesterday."</p>
+            </section>
+
+            <!-- ===== Skills ===== -->
+            <section id="skills">
+                <h2>Skills</h2>
+
+                <!-- one group = one category of skills -->
+                <div class="skills-group">
+                    <!-- h3: small title inside a section -->
+                    <h3>Language</h3>
+                    <!-- container: lines up the skill tags side by side -->
+                    <div class="skills-container">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3>Data &amp; AI</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Deep Learning</span>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3>Database</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQLAlchemy</span>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3>Tools</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Linux (WSL2)</span>
+                        <span class="skill-tag">Google Colab</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Experience ===== -->
+            <!-- id="experience": target of the "Projects" link in the sidebar -->
+            <section id="experience">
+                <h2>Experience</h2>
+
+                <!-- one experience item = one organization -->
+                <div class="experience-item">
+                    <!-- organization name (left) and period (right) -->
+                    <div class="experience-info">
+                        <span class="company">OZ Coding School - Healthcare AI Bootcamp</span>
+                        <span class="period">2026 ~ Present</span>
+                    </div>
+                    <div class="role">
+                        <span class="position">Trainee</span>
+                        <span class="rank">Team Projects</span>
+                    </div>
+
+                    <!-- one project block -->
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">Team Vital - Smoking &amp; Health Data Analysis</span>
+                            <span class="project-period">Team Leader</span>
+                        </div>
+                        <!-- details: what I did in this project -->
+                        <ul class="details">
+                            <li>Compared health indicators of smokers and non-smokers with t-tests and visualization</li>
+                            <li>Checked the effect of age (a confounder) with multiple regression</li>
+                        </ul>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">DACON - Infertility Pregnancy Prediction AI</span>
+                            <span class="project-period">Team Member</span>
+                        </div>
+                        <ul class="details">
+                            <li>Preprocessed infertility treatment data and built machine learning models</li>
+                        </ul>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">E-Sight - Veterinary Multimodal AI Service</span>
+                            <span class="project-period">Team Member</span>
+                        </div>
+                        <ul class="details">
+                            <li>Planned an AI service combining X-ray, blood test, and medication history</li>
+                            <li>Analyzed musculoskeletal label data and presented insights</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-info">
+                        <span class="company">Wanted 2026 AI Championship Hackathon</span>
+                        <span class="period">2026.09</span>
+                    </div>
+                    <div class="role">
+                        <span class="position">Frontend Developer</span>
+                        <span class="rank">Team Member</span>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">DentalTouch AI - Dental Kiosk for Seniors</span>
+                        </div>
+                        <ul class="details">
+                            <li>Built the kiosk UI (tooth map, 3-step questionnaire)</li>
+                            <li>Connected the screens to the backend triage API</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Education ===== -->
+            <section id="education">
+                <h2>Education</h2>
+                <!-- table: period (th) on the left, content (td) on the right -->
+                <table class="education-table">
+                    <tr>
+                        <th>2026 ~ Present</th>
+                        <td>OZ Coding School - Healthcare AI Bootcamp</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- ===== More about me ===== -->
+            <!-- reuse the same table style and the same skill-tag style -->
+            <section id="about">
+                <h2>More About Me</h2>
+                <table class="education-table">
+                    <tr>
+                        <th>Languages</th>
+                        <td>
+                            <!-- reuse: same pill tags as the Skills section -->
+                            <div class="skills-container">
+                                <span class="skill-tag">Korean (native)</span>
+                                <span class="skill-tag">English</span>
+                                <span class="skill-tag">French</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Interests</th>
+                        <td>
+                            <div class="skills-container">
+                                <span class="skill-tag">Healthcare AI</span>
+                                <span class="skill-tag">Neuroscience</span>
+                                <span class="skill-tag">Cybersecurity</span>
+                                <span class="skill-tag">Quantum Computing</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Hobbies</th>
+                        <td>
+                            <div class="skills-container">
+                                <span class="skill-tag">Swimming</span>
+                                <span class="skill-tag">Hiking</span>
+                                <span class="skill-tag">Reading</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+        </main>
+
+        <!-- ===== Footer ===== -->
+        <!-- &#169;: copyright symbol (©) -->
+        <footer>
+            Copyright &#169; 2026 Taeeun Eom. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- ===== Back to top button ===== -->
+    <!-- href="#": go to the top of the page -->
+    <a href="#" class="top-button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+</body>
+</html>
