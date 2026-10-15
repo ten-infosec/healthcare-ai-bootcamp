@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!-- lang: language of this document -->
+<html lang="en">
+<head>
+    <!-- character encoding: prevents broken characters -->
+    <meta charset="UTF-8">
+    <!-- fit the page to the device width (needed for responsive design) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title shown on the browser tab -->
+    <title>Taeeun Eom | Resume</title>
+
+    <!-- ===== External libraries ===== -->
+    <!-- Font Awesome: icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Google Fonts: Roboto (English font) -->
+    <!-- preconnect: connect to the font server early so the font loads faster -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- ===== My Style ===== -->
+    <!-- load my CSS last so it can override other styles -->
+    <link rel="stylesheet" href="./resume_style.css">
+</head>
+<body>
+
+    <!-- ===== Sidebar (navbar) ===== -->
+    <!-- nav: navigation area (menu links) -->
+    <nav class="sidebar">
+        <!-- inner box: used to add space with CSS -->
+        <div class="sidebar-container">
+
+            <!-- brand: my name at the top of the sidebar -->
+            <div class="sidebar-brand">
+                <span class="brand-name">Taeeun Eom</span>
+                <span class="brand-role">Healthcare AI Developer</span>
+            </div>
+
+            <!-- ul: unordered list (list without numbers) -->
+            <ul class="sidebar-menu">
+                <!-- href="#resume": jump to the element with id="resume" on this page -->
+                <!-- i: icon in front of each menu text -->
+                <li><a href="#resume"><i class="fa-solid fa-user"></i>Resume</a></li>
+                <li><a href="#skills"><i class="fa-solid fa-code"></i>Skills</a></li>
+                <li><a href="#experience"><i class="fa-solid fa-folder-open"></i>Projects</a></li>
+                <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i>Education</a></li>
+                <li><a href="#about"><i class="fa-solid fa-face-smile"></i>About Me</a></li>
+                <!-- target="_blank": open the link in a new tab -->
+                <li><a href="https://github.com/ten-infosec" target="_blank"><i class="fa-brands fa-github"></i>My_Github</a></li>
+                <!-- button: runs an action (print), not a link to another page -->
+                <!-- onclick="window.print()": open the browser's print window -->
+                <li>
+                    <button type="button" class="print-button" onclick="window.print()">
+                        <i class="fa-solid fa-print"></i>Print / PDF
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== Resume body ===== -->
+    <!-- id="resume": target of the "Resume" link in the sidebar -->
+    <div id="resume" class="container">
+        <main>
+
+            <!-- ===== Header ===== -->
+            <section id="resume-header">
+                <!-- wrapper: puts text (left) and photo (right) side by side -->
+                <div class="header-content">
+
+                    <!-- left side: name and contact info -->
+                    <div class="header-text">
+                        <h1>Taeeun Eom</h1>
+                        <p class="subtitle">Aspiring Healthcare AI Backend Developer</p>
+
+                        <!-- span: inline element, sits on the same line -->
+                        <!-- i: Font Awesome icon / &nbsp;: one non-breaking space -->
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>&nbsp;Seoul, South Korea
+                        </span>
+                        <span>
+                            <!-- mailto: clicking opens the mail app with this address -->
+                            <i class="fa-solid fa-at"></i>&nbsp;<a href="mailto:ten.infosec@gmail.com">ten.infosec@gmail.com</a>
+                        </span>
+                        <span>
+                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/ten-infosec" target="_blank">ten-infosec</a>
+                        </span>
+                    </div>
+
+                    <!-- right side: profile photo -->
+                    <div class="profile-photo">
+                        <!-- alt: text shown if the image cannot be loaded -->
+                        <img src="./lion_profile.jpg" alt="Profile image (white lion cub)">
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===== Introduce ===== -->
+            <section id="introduce">
+                <!-- h2: section title (one level below h1) -->
+                <h2>Introduce</h2>
+                <p>
+                    Hello, I'm Taeeun Eom, an aspiring developer who wants to turn healthcare data
+                    into services that truly help people.
+                    At OZ Coding School's Healthcare AI Bootcamp, I am learning data analysis,
+                    machine learning, deep learning, and web development step by step,
+                    and I record what I learn on GitHub every day.
+                </p>
+                <!-- class="motto": styled separately -->
+                <p class="motto">"Just one step further today than I was yesterday."</p>
+            </section>
+
+            <!-- ===== Skills ===== -->
+            <section id="skills">
+                <h2>Skills</h2>
+
+                <!-- grid: lines up the skill cards (2 columns on wide screens, 1 on narrow) -->
+                <div class="skills-grid">
+
+                    <!-- one group = one card = one category of skills -->
+                    <div class="skills-group">
+                        <!-- h3: small title inside a section -->
+                        <h3><i class="fa-solid fa-terminal"></i>Language</h3>
+                        <!-- container: lines up the skill tags side by side -->
+                        <div class="skills-container">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3><i class="fa-solid fa-brain"></i>Data &amp; AI</h3>
+                        <div class="skills-container">
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Deep Learning</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3><i class="fa-solid fa-database"></i>Database</h3>
+                        <div class="skills-container">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">SQLAlchemy</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3><i class="fa-solid fa-screwdriver-wrench"></i>Tools</h3>
+                        <div class="skills-container">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Linux (WSL2)</span>
+                            <span class="skill-tag">Google Colab</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===== Experience ===== -->
+            <!-- id="experience": target of the "Projects" link in the sidebar -->
+            <section id="experience">
+                <h2>Experience</h2>
+
+                <!-- one experience item = one organization -->
+                <div class="experience-item">
+                    <!-- organization name (left) and period (right) -->
+                    <div class="experience-info">
+                        <span class="company">OZ Coding School - Healthcare AI Bootcamp</span>
+                        <span class="period">2026 ~ Present</span>
+                    </div>
+                    <div class="role">
+                        <span class="position">Trainee</span>
+                        <span class="rank">Team Projects</span>
+                    </div>
+
+                    <!-- one project block -->
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">Team Vital - Smoking &amp; Health Data Analysis</span>
+                            <span class="project-period">Team Leader</span>
+                        </div>
+                        <!-- details: what I did in this project -->
+                        <ul class="details">
+                            <li>Compared health indicators of smokers and non-smokers with t-tests and visualization</li>
+                            <li>Checked the effect of age (a confounder) with multiple regression</li>
+                        </ul>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">DACON - Chest X-ray Pneumonia Classification</span>
+                            <span class="project-period">Individual Hackathon</span>
+                        </div>
+                        <ul class="details">
+                            <li>Improved the leaderboard score from 0.7468 (baseline CNN) to 0.9407 with ResNet18 full fine-tuning</li>
+                            <li>Found that cropping raised validation scores but lowered the leaderboard score, and traced the cause to aspect-ratio differences in the original images</li>
+                        </ul>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">DACON - Infertility Pregnancy Prediction AI</span>
+                            <span class="project-period">Team Member</span>
+                        </div>
+                        <ul class="details">
+                            <li>Preprocessed infertility treatment data and built machine learning models</li>
+                        </ul>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">E-Sight - Veterinary Multimodal AI Service</span>
+                            <span class="project-period">Team Member</span>
+                        </div>
+                        <ul class="details">
+                            <li>Planned an AI service combining X-ray, blood test, and medication history</li>
+                            <li>Analyzed musculoskeletal label data and presented insights</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-info">
+                        <span class="company">Wanted 2026 AI Championship Hackathon</span>
+                        <span class="period">2026.09</span>
+                    </div>
+                    <div class="role">
+                        <span class="position">Frontend Developer</span>
+                        <span class="rank">Team Member</span>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">DentalTouch AI - Dental Kiosk for Seniors</span>
+                        </div>
+                        <ul class="details">
+                            <li>Built the kiosk UI (tooth map, 3-step questionnaire)</li>
+                            <li>Connected the screens to the backend triage API</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Education ===== -->
+            <!-- table -> flex: label (left) and content (right) in one row -->
+            <section id="education">
+                <h2>Education</h2>
+                <div class="info-list">
+                    <!-- one row = label + content -->
+                    <div class="info-row">
+                        <span class="info-label">2026 ~ Present</span>
+                        <div class="info-content">OZ Coding School - Healthcare AI Bootcamp</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== More about me ===== -->
+            <!-- reuse the same info-list style and the same skill-tag style -->
+            <section id="about">
+                <h2>More About Me</h2>
+                <div class="info-list">
+                    <div class="info-row">
+                        <span class="info-label">Languages</span>
+                        <div class="info-content">
+                            <!-- reuse: same pill tags as the Skills section -->
+                            <div class="skills-container">
+                                <span class="skill-tag">Korean (native)</span>
+                                <span class="skill-tag">English</span>
+                                <span class="skill-tag">French</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Interests</span>
+                        <div class="info-content">
+                            <div class="skills-container">
+                                <span class="skill-tag">Healthcare AI</span>
+                                <span class="skill-tag">Neuroscience</span>
+                                <span class="skill-tag">Cybersecurity</span>
+                                <span class="skill-tag">Quantum Computing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Hobbies</span>
+                        <div class="info-content">
+                            <div class="skills-container">
+                                <span class="skill-tag">Swimming</span>
+                                <span class="skill-tag">Hiking</span>
+                                <span class="skill-tag">Reading</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ===== Footer ===== -->
+        <!-- &#169;: copyright symbol (©) -->
+        <footer>
+            Copyright &#169; 2026 Taeeun Eom. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- ===== Back to top button ===== -->
+    <!-- href="#": go to the top of the page -->
+    <a href="#" class="top-button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+</body>
+</html>
