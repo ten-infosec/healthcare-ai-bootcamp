@@ -17,8 +17,8 @@ AI 헬스케어 7기 부트캠프에서 진행한 개별 미션과 실습 노트
 | [mission4_tech_credit](./02_ai/mission4_tech_credit) | 헬스케어 기술보증 데이터 분석 | 통계 검정(Mann-Whitney U, 카이제곱), Word2Vec, scikit-learn 파이프라인, 양방향 GRU · 문제별 회고(REVIEW_Q1-Q7) |
 | [day09_rnn_dur](./02_ai/nlp/day09_rnn_dur) | DUR 금기 의약품 텍스트 분석 | LDA 토픽 모델링, RNN 계열 5개 모형 비교(SimpleRNN · LSTM · GRU · BiGRU · Stacked GRU) |
 | [day10_seq2seq](./02_ai/nlp/day10_seq2seq) | 자연어 생성: 영→한 기계 번역 | 글자 단위 Seq2Seq(LSTM 인코더-디코더), SOS/EOS · one-hot 전처리, Teacher Forcing 학습, 자기회귀 추론, 한계(병목 · 기울기 소실)와 Attention |
-| [day11_attention](./02_ai/nlp/day11_attention) | Attention | Attention 메커니즘 실습 |
-| [day12_pretraining](./02_ai/nlp/day12_pretraining) | 사전학습 모델 | 사전학습(Pre-training) 모델 실습 |
+| [day11_attention](./02_ai/nlp/day11_attention) | Attention과 Transformer | LSTM Seq2Seq + Attention 영→한 번역, Transformer 직접 구현(Positional Encoding · Multi-Head Attention · 마스크 · CustomSchedule)으로 한국어 질문-답변 챗봇 학습 |
+| [day12_pretraining](./02_ai/nlp/day12_pretraining) | 사전학습 모델과 의료 멀티모달 | Hugging Face로 BERT(MLM · NSP) · 문장 임베딩 챗봇 · KoGPT2 디코딩 전략, VQA-RAD 의료 영상에 CLIP · PubMed-CLIP 제로샷 비교, BLIP 캡셔닝 · VQA 및 의료 미세조정 모델 비교 |
 | [deep_learning_project](./02_ai/deep_learning_project) | 『딥러닝과 인공지능 의료』 프로젝트 구현 | 1장 유방암 진단(WBCD, SVM · 앙상블 · AutoML), 2장 당뇨망막병증 감지(CNN · InceptionV3 · VGG16 가중치 앙상블) |
 | [project_esight](./02_ai/project_esight) | E-Sight: 동물병원 멀티모달 판독 보조 AI (팀 프로젝트) | X-ray · 혈액검사 · 투약이력 결합 서비스 기획, 발표 대본 · 슬라이드 |
 
