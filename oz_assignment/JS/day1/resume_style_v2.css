@@ -424,6 +424,8 @@ main h2 {
 /* ===== Project detail button & dialog (Bootstrap) ===== */
 /* small space above the "View details" button */
 .detail-button {
+    display: block;
+    margin-left: auto;
     margin-top: 10px;
     font-size: 0.85em;
 }
@@ -431,6 +433,19 @@ main h2 {
 /* dialog width: never wider than 560px, and fits narrow screens */
 .dialog {
     width: min(560px, 90vw);
+}
+
+/* Bootstrap gives .dialog display:flex even when closed (only visibility:hidden),
+   so the hidden dialog still takes space and leaves a blank area at the bottom.
+   :not([open]) = while the dialog is closed -> remove it from the layout completely */
+.dialog:not([open]) {
+    display: none;
+}
+
+/* Bootstrap's reboot makes headings lighter (font-weight 500) -> keep them bold like v1 */
+#resume-header h1,
+main h2 {
+    font-weight: 700;
 }
 
 .dialog-title {
