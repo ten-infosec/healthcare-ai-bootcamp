@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- GET: 데이터를 주소 뒤(?q=...)에 붙여서 보냄 -->
+    <form action="https://google.com/search">
+        <input type="search" name="q" placeholder="검색어를 입력하세요.">
+        <button>검색</button>
+    </form>
+
+    <hr>
+
+    <!-- POST: 데이터를 요청 본문(body)에 담아서 보냄 -->
+    <!-- httpbin.org/post: 받은 요청을 그대로 되돌려 보여 주는 테스트 서버 -->
+<form action="https://httpbin.org/post" method="post">
+    <label for="newEmail">이메일</label>
+    <input id="newEmail" type="email" name="email" placeholder="a@example.com">
+    <br>
+    <label for="newPassword">비밀번호</label>
+    <input id="newPassword" type="password" name="password" placeholder="8자리 암호">
+    <button>회원가입</button>
+</form>
+</body>
+</html>

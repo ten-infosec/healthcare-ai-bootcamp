@@ -13,3 +13,8 @@ data/
 *.html
 # allow assignment HTML files
 !oz_assignment/**/*.html
+
+!03_web/**/*.html
+
+# Third-party image (copyright)
+03_web/html_css/day1_class/blood-2.png
