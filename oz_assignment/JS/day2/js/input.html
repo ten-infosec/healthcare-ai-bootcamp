@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="name-input">
+    <button>확인</button>
+
+    <script>
+        const input = document.querySelector("#name-input")
+        const button = document.querySelector("button")
+        const p = document.createElement("p");
+
+        button.addEventListener("click", () => {
+            // Early-Return ( 조기 반환 )
+            if (input.value === "") {
+                alert("이름을 입력하세요.");
+                return
+            }
+
+            p.textContent = input.value;
+            document.body.appendChild(p);
+            input.value = "";
+
+        }
+        )
+    </script>
+
+
+
+
+</body>
+
+</html>
