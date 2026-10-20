@@ -1,0 +1,128 @@
+/* ===== Base ===== */
+body {
+    font-family: "Pretendard", "Noto Sans KR", sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+/* 가운데 흰 카드 영역 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* ===== Tabs ===== */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background: #eee;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 현재 선택된 탭 */
+.tab-btn.active {
+    background: #2c3e50;
+    color: #fff;
+}
+
+/* ===== Search ===== */
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* ===== Status ===== */
+.loading,
+.empty {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+}
+
+.status {
+    text-align: right;
+    font-size: 13px;
+    color: #888;
+    margin: 0 0 8px;
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #f8f9fa;
+    color: #555;
+}
+
+.symbol {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* 한국 증시 관례: 상승은 빨강, 하락은 파랑 */
+.up {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.down {
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* 관심 버튼(별) */
+.fav-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.fav-btn.active {
+    color: #f1c40f;
+}
+
+/* ===== Utility ===== */
+/* hidden 클래스가 붙으면 화면에서 숨김 */
+.hidden {
+    display: none;
+}

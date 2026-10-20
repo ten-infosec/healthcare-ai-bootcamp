@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>암호화폐 가격 변동 추적기</title>
+    <!-- 같은 폴더의 CSS 파일 연결 -->
+    <link rel="stylesheet" href="cryptocurrency_style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>실시간 암호화폐 가격 변동 추적기</h1>
+
+        <!-- ===== Tabs ===== -->
+        <!-- 전체보기 / 관심항목 탭 버튼 (active 클래스가 붙은 쪽이 현재 탭) -->
+        <div class="tabs">
+            <button id="allTab" class="tab-btn active">전체보기</button>
+            <button id="favoritesTab" class="tab-btn">관심항목</button>
+        </div>
+
+        <!-- ===== Search ===== -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="심볼 검색 (예: BTCUSDT)">
+        </div>
+
+        <!-- ===== Status ===== -->
+        <!-- 처음 데이터를 받기 전까지 보이는 안내 문구 -->
+        <div id="loading" class="loading">데이터를 불러오는 중...</div>
+        <!-- 마지막으로 갱신된 시각과 표시 중인 종목 수 -->
+        <p id="status" class="status hidden"></p>
+
+        <!-- ===== Table ===== -->
+        <!-- 처음에는 hidden 클래스로 숨겨두고, 데이터가 오면 보이게 함 -->
+        <table id="cryptoTable" class="hidden">
+            <thead>
+                <tr>
+                    <th>관심</th>
+                    <th>심볼</th>
+                    <th>현재가</th>
+                    <th>24시간 변동률</th>
+                    <th>최고가</th>
+                    <th>최저가</th>
+                </tr>
+            </thead>
+            <!-- 자바스크립트가 tr을 만들어 여기에 채워 넣음 -->
+            <tbody id="cryptoList"></tbody>
+        </table>
+
+        <!-- 관심항목 탭인데 보여줄 게 없을 때 안내 -->
+        <p id="emptyMessage" class="empty hidden">관심항목이 없습니다. ☆를 눌러 추가해 보세요.</p>
+    </div>
+
+    <!-- body 맨 끝에서 JS 불러오기 → 위의 태그들이 다 만들어진 뒤 실행됨 -->
+    <script src="cryptocurrency.js"></script>
+</body>
+
+</html>
